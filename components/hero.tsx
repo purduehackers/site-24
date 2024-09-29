@@ -1,30 +1,38 @@
 import Image from "next/image";
 
 import phText from "../public/text/purdue-hackers.svg"
+import phTextFilled from "../public/text/purdue-hackers-filled.svg"
 import purdueText from "../public/text/purdue.svg"
 import hackersText from "../public/text/hackers.svg"
 import gliderCubes from "../public/glider-cubes.png"
 import gliderCubes2 from "../public/glider-cubes2.png"
+import gliderCubes3 from "../public/glider-cubes-x3.png"
 
 const Hero = () => {
   return (
     <div className="bg-amber-100 flex flex-col items-center justify-center py-12 lg:py-0 lg:h-screen gap-y-4">
-        <div className="flex">
-            <div className="bg-amber-0 w-fit h-fit flex flex-col items-start justify-start">
-                <Image className="w-128 h-fit relative top-24"
-                    src={purdueText}
+        <div className="flex items-center justify-center">
+            <div className="flex flex-col relative left-24">
+                <Image className="w-7/12 h-fit relative"
+                    src={phTextFilled}
                     alt="purdue hackers"
                 />
-                <Image className="w-128 h-fit relative -top-24"
-                    src={hackersText}
-                    alt="purdue hackers"
-                />
+                <div className="w-full mx-auto text-amber-500 relative top-4">
+                    <p className="text-lg font-mono font-bold sm:text-xl">
+                        a community of students who collaborate, learn, and build
+                        kick-ass technical projects
+                    </p>
+                </div>
             </div>
-            <Image className="w-96 h-fit"
+            <Image className="w-7/12 h-fit relative left-24"
+                src={gliderCubes3}
+                alt="glider cubes"
+            />
+            <Image className="hidden w-96 h-fit"
                 src={gliderCubes}
                 alt="glider cubes"
             />
-            <Image className="w-96 h-fit"
+            <Image className="hidden w-96 h-fit"
                 src={gliderCubes2}
                 alt="glider cubes"
             />

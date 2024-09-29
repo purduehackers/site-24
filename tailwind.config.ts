@@ -86,11 +86,16 @@ const config: Config = {
         'bg-flash': {
           '0%': { backgroundColor: '59, 235, 135' },
           '100%': { backgroundColor: 'rgb(3, 111, 252)' }
+        },
+        'horizontal-scroll': {
+          '0%': {transform: 'translateX(0)' },
+          '100%': {transform: 'translateX(calc(0px - 50%))'}
         }
       },
       animation: {
         'fade-in': 'fade-in .5s ease-in-out',
-        'bg-flash': 'bg-flash 1s linear 0s infinite alternate'
+        'bg-flash': 'bg-flash 1s linear 0s infinite alternate',
+        'horizontal-scroll': 'horizontal-scroll 14s linear 0s infinite'
       }
     }
   },
