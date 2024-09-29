@@ -6,8 +6,10 @@ import Head from "next/head";
 import Image from "next/image";
 
 import bricks from "../public/bricks.svg";
+import cake from "../public/cake.png";
 
 import "./globals.css";
+import Email from "@/components/email";
 
 export default function Home() {
   const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV;
@@ -26,13 +28,13 @@ export default function Home() {
           }
         />
       </Head>
-      <main className="bg-indigo-500">
+      <main>
         <Hero />
         <div className="flex">
           {
             [...Array(2)].map((i) => {
               return (
-                <div className="font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
+                <div className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
                   {
                     [...Array(20)].map((i) => {
                       return (
@@ -47,10 +49,35 @@ export default function Home() {
             })
           }
         </div>
-        <Image className="w-4/5"
-          src={bricks}
-          alt="Bricks"
-        />
+
+        <Email />
+        <div className="bg-indigo-500 relative">
+          <div className="z-20 relative flex flex-col justify-center items-end ">
+            <Image className="z-20 relative w-48 h-fit relative p-8"
+              src={cake}
+              alt="Cake"
+            />
+            <div className="z-10 relative -top-24 w-2/5 h-[400px] m-8 border-solid border-black border-2 p-4 
+                rounded-sm shadow-blocks shadow-amber-400 bg-gray-800 text-white">
+              <h1 className="text-4xl font-mono font-bold text-center">
+                  ???
+              </h1> <br/>
+              <p className="font-mono font-bold text-gray-200">
+                Hello friend.
+              </p>
+            </div>
+            <div className="z-10 relative -top-24 w-fit h-fit m-8 border-solid border-black border-2 p-4 
+                rounded-sm shadow-blocks shadow-amber-400 bg-gray-800 text-white">
+              <h1 className="text-4xl font-mono font-bold text-center">
+                  list cards
+              </h1>
+            </div>
+          </div>
+          <Image className="z-0 w-4/5 absolute -top-4 -left-24 -skew-y-[30deg] scale-y-100"
+            src={bricks}
+            alt="Bricks"
+          />
+        </div>
       </main>
     </div>
   );
