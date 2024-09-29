@@ -9,6 +9,7 @@ import bricks from "../public/bricks.svg";
 import cake from "../public/cake.png";
 
 import "./globals.css";
+import Test from "@/components/test";
 import Email from "@/components/email";
 
 export default function Home() {
@@ -50,7 +51,7 @@ export default function Home() {
           }
         </div>
 
-        <Email />
+        <Test />
         <div className="bg-indigo-500 relative">
           <div className="z-20 relative flex flex-col justify-center items-end ">
             <Image className="z-20 relative w-48 h-fit relative p-8"
@@ -73,11 +74,36 @@ export default function Home() {
               </h1>
             </div>
           </div>
+          <div className="z-20 relative flex flex-col justify-center items-start">
+            <div className="z-10 relative -top-24 w-fit h-fit m-8 border-solid border-black border-2 p-4 
+                rounded-sm shadow-blocks shadow-amber-400 bg-gray-800 text-white">
+              <h1 className="text-4xl font-mono font-bold text-center">
+                list cards
+              </h1>
+            </div>
+            <div className="z-10 relative -top-24 w-fit h-fit m-8 border-solid border-black border-2 p-4 
+                rounded-sm shadow-blocks shadow-amber-400 bg-gray-800 text-white">
+              <h1 className="text-4xl font-mono font-bold text-center">
+                blog
+              </h1>
+            </div>
+            <div className="z-10 relative -top-24 w-fit h-fit m-8 border-solid border-black border-2 p-4 
+                rounded-sm shadow-blocks shadow-amber-400 bg-gray-800 text-white">
+              <h1 className="text-4xl font-mono font-bold text-center">
+                more stuff
+              </h1>
+            </div>
+          </div>
           <Image className="z-0 w-4/5 absolute -top-4 -left-24 -skew-y-[30deg] scale-y-100"
             src={bricks}
             alt="Bricks"
           />
+          <Image className="z-0 w-4/5 absolute top-2/3 left-1/2 skew-y-[30deg] scale-y-100"
+            src={bricks}
+            alt="Bricks"
+          />
         </div>
+        <Email />
       </main>
     </div>
   );
