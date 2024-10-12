@@ -5,13 +5,14 @@ import dino from "../public/dino-w-tail.png"
 
 const Email = () => {
   return (
-    <div className="bg-amber-200 flex flex-col items-center justify-center py-12 lg:py-0 lg:h-screen gap-y-4">
+    <div className="bg-amber-200 flex flex-col items-center justify-center py-12 lg:h-screen gap-y-4">
         <Image className="w-64 h-fit"
             src={blog}
             alt="blog"
         />
-        <div className="z-20 relative w-3/4 h-4/5 flex border-solid border-black border-2 bg-amber-100">
-            <div  className="w-2/5 h-full flex border-solid border-black border-2 p-4">
+        <div className="z-20 relative w-3/4 h-[500px] flex border-solid border-black border-2 bg-amber-100
+                shadow-blocks shadow-cyan-500">
+            <div  className="w-2/5 h-full flex border-solid border-black border-2 p-6">
                 <div  className="w-4/5 h-4/5 bg-[#5100ff] border-solid border-black border-2 p-4">
                 
                 </div>

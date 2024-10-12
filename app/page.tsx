@@ -31,27 +31,8 @@ export default function Home() {
       </Head>
       <main>
         <Hero />
-        <div className="flex">
-          {
-            [...Array(2)].map((i) => {
-              return (
-                <div className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
-                  {
-                    [...Array(20)].map((i) => {
-                      return (
-                        <div key={i} className="mr-2">
-                          HACK.
-                        </div>
-                      );
-                    })
-                  }
-                </div>
-              );
-            })
-          }
-        </div>
+        
 
-        <Test />
         <div className="bg-indigo-500 relative">
           <div className="z-20 relative flex flex-col justify-center items-end ">
             <Image className="z-20 relative w-48 h-fit relative p-8"
@@ -84,7 +65,7 @@ export default function Home() {
             <div className="z-10 relative -top-24 w-fit h-fit m-8 border-solid border-black border-2 p-4 
                 rounded-sm shadow-blocks shadow-amber-400 bg-gray-800 text-white">
               <h1 className="text-4xl font-mono font-bold text-center">
-                blog
+                idk
               </h1>
             </div>
             <div className="z-10 relative -top-24 w-fit h-fit m-8 border-solid border-black border-2 p-4 
@@ -104,6 +85,48 @@ export default function Home() {
           />
         </div>
         <Email />
+
+        <div className="flex">
+          {
+            [...Array(2)].map((i) => {
+              return (
+                <div className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
+                  {
+                    [...Array(20)].map((i) => {
+                      return (
+                        <div key={i} className="mr-2">
+                          HACK.
+                        </div>
+                      );
+                    })
+                  }
+                </div>
+              );
+            })
+          }
+        </div>
+
+        <Test />
+
+        <div className="flex">
+          {
+            [...Array(2)].map((i) => {
+              return (
+                <div className="z-30 font-pixel flex text-pink-500 bg-amber-300 whitespace-nowrap animate-horizontal-scroll-reverse">
+                  {
+                    [...Array(20)].map((i) => {
+                      return (
+                        <div key={i} className="mr-2">
+                          HACK.
+                        </div>
+                      );
+                    })
+                  }
+                </div>
+              );
+            })
+          }
+        </div>
       </main>
     </div>
   );

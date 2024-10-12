@@ -95,7 +95,8 @@ const config: Config = {
       animation: {
         'fade-in': 'fade-in .5s ease-in-out',
         'bg-flash': 'bg-flash 1s linear 0s infinite alternate',
-        'horizontal-scroll': 'horizontal-scroll 14s linear 0s infinite'
+        'horizontal-scroll': 'horizontal-scroll 14s linear 0s infinite',
+        'horizontal-scroll-reverse': 'horizontal-scroll 14s linear 0s infinite reverse'
       }
     }
   },

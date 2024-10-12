@@ -10,7 +10,7 @@ import gliderCubes3 from "../public/glider-cubes-x3.png"
 
 const Hero = () => {
   return (
-    <div className="bg-yellow-100 flex flex-col items-center justify-center py-12 lg:py-0 lg:h-screen gap-y-4">
+    <div className="bg-amber-100 flex flex-col items-center justify-center py-12 lg:py-0 lg:h-screen gap-y-4">
         <div className="flex items-center justify-center">
             <div className="flex flex-col relative left-24">
                 <Image className="w-7/12 h-fit relative"
