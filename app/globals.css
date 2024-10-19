@@ -21,6 +21,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.text-stroke-3 {
+  -webkit-text-stroke: 3px black;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

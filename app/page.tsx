@@ -1,7 +1,7 @@
+"use client";
+
 import React from "react";
 
-import Footer from "@/components/footer";
-import Hero from "@/components/hero";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -9,8 +9,11 @@ import bricks from "../public/bricks.svg";
 import cake from "../public/cake.png";
 
 import "./globals.css";
-import Test from "@/components/test";
+import Hero from "@/components/hero";
 import Email from "@/components/email";
+import Community from "@/components/community";
+import JoinUs from "@/components/join-us";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV;
@@ -85,16 +88,17 @@ export default function Home() {
           />
         </div>
         <Email />
+        <Community />
 
         <div className="flex">
           {
-            [...Array(2)].map((i) => {
+            [...Array(2)].map((_, i) => {
               return (
-                <div className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
+                <div key={`outer-${i}-1`} className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
                   {
-                    [...Array(20)].map((i) => {
+                    [...Array(20)].map((_, j) => {
                       return (
-                        <div key={i} className="mr-2">
+                        <div key={`inner-${i}-${j}-1`} className="mr-2">
                           HACK.
                         </div>
                       );
@@ -106,17 +110,17 @@ export default function Home() {
           }
         </div>
 
-        <Test />
+        <JoinUs />
 
         <div className="flex">
           {
-            [...Array(2)].map((i) => {
+            [...Array(2)].map((_, i) => {
               return (
-                <div className="z-30 font-pixel flex text-pink-500 bg-amber-300 whitespace-nowrap animate-horizontal-scroll-reverse">
+                <div key={`outer-${i}-2`} className="z-30 font-pixel flex text-pink-500 bg-amber-300 whitespace-nowrap animate-horizontal-scroll-reverse">
                   {
-                    [...Array(20)].map((i) => {
+                    [...Array(20)].map((_, j) => {
                       return (
-                        <div key={i} className="mr-2">
+                        <div key={`inner-${i}-${j}-2`} className="mr-2">
                           HACK.
                         </div>
                       );
@@ -127,6 +131,7 @@ export default function Home() {
             })
           }
         </div>
+        <Footer />
       </main>
     </div>
   );

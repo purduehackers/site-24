@@ -14,7 +14,7 @@ const Email = () => {
                 shadow-blocks shadow-cyan-500">
             <div  className="w-2/5 h-full flex border-solid border-black border-2 p-6">
                 <div  className="w-4/5 h-4/5 bg-[#5100ff] border-solid border-black border-2 p-4">
-                
+                 test
                 </div>
             </div>
             <div  className="w-3/5 h-full flex flex-col border-solid border-black border-2">

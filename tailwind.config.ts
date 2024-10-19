@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
+const plugin = require('tailwindcss/plugin');
 
 const config: Config = {
   content: [
@@ -88,8 +90,8 @@ const config: Config = {
           '100%': { backgroundColor: 'rgb(3, 111, 252)' }
         },
         'horizontal-scroll': {
-          '0%': {transform: 'translateX(0)' },
-          '100%': {transform: 'translateX(calc(0px - 50%))'}
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(0px - 50%))' }
         }
       },
       animation: {
@@ -97,9 +99,54 @@ const config: Config = {
         'bg-flash': 'bg-flash 1s linear 0s infinite alternate',
         'horizontal-scroll': 'horizontal-scroll 14s linear 0s infinite',
         'horizontal-scroll-reverse': 'horizontal-scroll 14s linear 0s infinite reverse'
-      }
-    }
+      },
+      textShadow: {
+        sm: '-2px 2px 0 var(--tw-shadow-color)',
+        DEFAULT: '-4px 4px 0 var(--tw-shadow-color)',
+        lg: '-8px 8px 0 var(--tw-shadow-color)',
+      },
+      textStroke: {
+        sm: '2px black',
+        DEFAULT: '4px black',
+        lg: '8px black',
+      },
+    },
+
+    // Text fill and stroke plugin
+    textFillColor: (theme: PluginAPI["theme"]) => theme('borderColor'),
+    textStrokeColor: (theme: PluginAPI["theme"]) => theme('borderColor'),
+    textStrokeWidth: (theme: PluginAPI["theme"]) => theme('borderWidth'),
+    paintOrder: {
+      'fsm': { paintOrder: 'fill stroke markers' },
+      'fms': { paintOrder: 'fill markers stroke' },
+      'sfm': { paintOrder: 'stroke fill markers' },
+      'smf': { paintOrder: 'stroke markers fill' },
+      'mfs': { paintOrder: 'markers fill stroke' },
+      'msf': { paintOrder: 'markers stroke fill' },
+    },
   },
-  plugins: [],
+  variants: {
+    textFillColor: ['responsive'],
+    textStrokeColor: ['responsive'],
+    textStrokeWidth: ['responsive'],
+    paintOrder: ['responsive'],
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwindcss-text-fill-stroke')(),
+    plugin(function ({ matchUtilities, theme }: { 
+      matchUtilities : PluginAPI["matchUtilities"], 
+      theme : PluginAPI["theme"]
+    }) {
+      matchUtilities(
+        {
+          'text-shadow': (value: string) => ({
+            textShadow: value,
+          })
+        },
+        { values: theme('textShadow')}
+      )
+    }),
+  ],
 };
 export default config;
