@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import blog from "../public/text/blog.svg"
-import dino from "../public/dino-w-tail.png"
+import dino from "../public/img/dino-w-tail.png"
 
 const Email = () => {
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import phTextFilled from "../public/text/purdue-hackers-filled.svg"
-import dino from "../public/dino-w-tail.png"
+import dino from "../public/img/dino-w-tail.png"
 
 const Test = () => {
   return (

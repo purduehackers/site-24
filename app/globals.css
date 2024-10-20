@@ -73,12 +73,6 @@ body {
   .channel-name {
     @apply px-1 bg-discord-vibrant text-white hover:cursor-pointer rounded;
   }
-  .message:nth-child(3) {
-    @apply sm:right-[22rem] !important;
-  }
-  .message:nth-child(4) {
-    @apply sm:left-[22rem] !important;
-  }
   .no-ring {
     @apply focus:ring-0 focus:ring-offset-0 focus:border-black !important;
   }

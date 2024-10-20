@@ -5,8 +5,8 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-import bricks from "../public/bricks.svg";
-import cake from "../public/cake.png";
+import bricks from "../public/img/bricks.svg";
+import cake from "../public/img/cake.png";
 
 import "./globals.css";
 import Hero from "@/components/hero";
@@ -14,6 +14,7 @@ import Email from "@/components/email";
 import Community from "@/components/community";
 import JoinUs from "@/components/join-us";
 import Footer from "@/components/footer";
+import DiscordCarousel from "@/components/discord-carousel";
 
 export default function Home() {
   const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV;
@@ -94,7 +95,7 @@ export default function Home() {
           {
             [...Array(2)].map((_, i) => {
               return (
-                <div key={`outer-${i}-1`} className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
+                <div key={`outer-${i}-1`} className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll hover:animate-none">
                   {
                     [...Array(20)].map((_, j) => {
                       return (

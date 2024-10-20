@@ -82,8 +82,20 @@ const config: Config = {
       },
       keyframes: {
         'fade-in': {
-          '0%': { opacity: '50%' },
+          '0%': { opacity: '30%' },
           '100%': { opacity: '100%' }
+        },
+        'fade-out': {
+          '0%': { opacity: '100%' },
+          '100%': { opacity: '0%' }
+        },
+        'zoom-in': {
+          '0%': { transform: 'scale(.3)' },
+          '100%': { transform: 'scale(1)' }
+        },
+        'zoom-out': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0)' }
         },
         'bg-flash': {
           '0%': { backgroundColor: '59, 235, 135' },
@@ -96,14 +108,18 @@ const config: Config = {
       },
       animation: {
         'fade-in': 'fade-in .5s ease-in-out',
+        'fade-out': 'fade-out .5s ease-in-out',
+        'zoom-in': 'zoom-in .5s ease-in-out',
+        'zoom-out': 'zoom-out .5s ease-in-out',
         'bg-flash': 'bg-flash 1s linear 0s infinite alternate',
         'horizontal-scroll': 'horizontal-scroll 14s linear 0s infinite',
         'horizontal-scroll-reverse': 'horizontal-scroll 14s linear 0s infinite reverse'
       },
       textShadow: {
-        sm: '-2px 2px 0 var(--tw-shadow-color)',
+        '2': '-2px 2px 0 var(--tw-shadow-color)',
         DEFAULT: '-4px 4px 0 var(--tw-shadow-color)',
-        lg: '-8px 8px 0 var(--tw-shadow-color)',
+        '6': '-6px 6px 0 var(--tw-shadow-color)',
+        '8': '-8px 8px 0 var(--tw-shadow-color)',
       },
       textStroke: {
         sm: '2px black',

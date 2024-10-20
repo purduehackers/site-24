@@ -4,9 +4,9 @@ import phText from "../public/text/purdue-hackers.svg"
 import phTextFilled from "../public/text/purdue-hackers-filled.svg"
 import purdueText from "../public/text/purdue.svg"
 import hackersText from "../public/text/hackers.svg"
-import gliderCubes from "../public/glider-cubes.png"
-import gliderCubes2 from "../public/glider-cubes2.png"
-import gliderCubes3 from "../public/glider-cubes-x3.png"
+import gliderCubes from "../public/img/glider-cubes.png"
+import gliderCubes2 from "../public/img/glider-cubes2.png"
+import gliderCubes3 from "../public/img/glider-cubes-x3.png"
 
 const Hero = () => {
   return (

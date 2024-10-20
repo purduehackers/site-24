@@ -82,6 +82,7 @@ export const emails = [
   
 export const discordMessages = [
     {
+      id: 0,
       channel: '#ship',
       username: 'Cartic',
       pfpImageSrc:
@@ -89,15 +90,17 @@ export const discordMessages = [
       content: `🦀 🦀 🦀  i made a web api to store my reviews of movies. I call it review-api`
     },
     {
+      id: 1,
       channel: '#ship',
       username: 'Neil',
       pfpImageSrc:
         'https://cdn.discordapp.com/avatars/221731072822607872/cf31ac5c2be5ee7e596a2face41bb0ac.webp?size=160',
       content: `made a silly link extender, which puts a ton of loremipsum text as the new link to a webpage`,
-      imageSrc: '/img/linkextender.webp',
+      imageSrc: '/img/discord/linkextender.webp',
       imageAlt: `An image of a Discord message showing a really long url. A bunch of lorem ipsum text makes up the long url`
     },
     {
+      id: 2,
       channel: '#hack-night',
       username: 'Ayden B',
       pfpImageSrc:
@@ -105,27 +108,30 @@ export const discordMessages = [
       content: 'If the stars align I might be able to join'
     },
     {
+      id: 3,
       channel: '#lounge',
       username: 'matthew!!!',
       pfpImageSrc:
         'https://cdn.discordapp.com/avatars/89849998585376768/c6842dbd33dfdcfa2fa107d272b6553d.webp?size=160',
       content: `Rainbow today`,
-      imageSrc: '/img/rainbow.webp',
+      imageSrc: '/img/discord/rainbow.webp',
       imageAlt: `A picture of a double rainbow outside on Purdue's campus`
     },
     {
+      id: 4,
       channel: '#ship',
       username: 'Rachel S.',
-      pfpImageSrc: '/img/rachel_pfp.gif',
+      pfpImageSrc: '/img/discord/rachel_pfp.gif',
       content: `a small victory but i made my first discord bot with python :,) right now it serves as my own personal quotebook but i want it to be my own journal i can scream / rant at`
     },
     {
+      id: 5,
       channel: '#awestruck',
       username: 'JACK-Complete',
       pfpImageSrc:
         'https://cdn.discordapp.com/avatars/262055523896131584/48c99c56d406b16f4c577c382cf1a662.webp?size=160',
       content: ``,
-      imageSrc: '/img/awestruck.jpg',
+      imageSrc: '/img/discord/awestruck.jpg',
       imageAlt: `Node.js Device`
     }
 ];
@@ -134,12 +140,15 @@ export const workshopArticle = `Workshops are our flagship events, happening eve
   
 export const madeWith = [
     'love',
+    'bricks',
     'an army of fearless geese',
     'coffee and sleepless nights',
     'a mix of caffeinated and herbal tea',
     'heart and zap',
-    'the souls of a thousand diabetic bats',
+    'the souls of my enemies',
     'the power of god and anime',
+    'cardboard and ducktape',
+    'one singular braincell',
     'dihydrogen monoxide',
     'sacrificial rituals of unspeakable horror',
     'a half-eaten sandwich',
