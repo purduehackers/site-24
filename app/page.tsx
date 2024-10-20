@@ -26,7 +26,6 @@ export default function Home() {
     script.async = true;
 
     script.onload = () => {
-      console.log("Blotter.js loaded.");
       setScriptLoaded(true); // Set state to true when loaded
     };
 
@@ -57,15 +56,6 @@ export default function Home() {
       </Head>
       <main>
         <Hero />
-        {scriptLoaded && <SplitColorChannelText
-          text="Burst"
-          fontSize={120}
-          rotation={5.0}
-          rgbOffset={0.8}
-          addBlur={false}
-          addNoise={true}
-        />}
-        
 
         <div className="bg-indigo-500 relative">
           <div className="z-20 relative flex flex-col justify-center items-end ">

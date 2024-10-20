@@ -18,7 +18,7 @@ const DiscordCard = ({
   return (
     <div className="rounded-md border-2 border-black w-11/12 sm:w-96 mb-4 shadow-email shadow-gray-900/30 h-fit z-0 relative">
       <div className="flex flex-row bg-gray-discord-darker cursor-pointer text-gray-100">
-        <p className="px-2 border-r-2 border-b-2 border-black bg-blue-discord hover:bg-discord-light">
+        <p className="px-2 border-r-2 border-b-2 border-black bg-amber-500 hover:bg-discord-light">
           ∆
         </p>
         <div className="grow handle" />
@@ -26,7 +26,7 @@ const DiscordCard = ({
         <div className="grow handle" />
         <div />
       </div>
-      <div className="border-black flex flex-col bg-slate-700 p-2 text-white text-sm">
+      <div className="border-black flex flex-col bg-indigo-500 p-2 text-white text-sm">
         <div className="flex flex-row gap-4">
           <div>
             <div className="w-10">
