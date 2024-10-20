@@ -104,16 +104,21 @@ const config: Config = {
         'horizontal-scroll': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(0px - 50%))' }
-        }
+        },
+        'vertical-scroll': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(calc(0px + 100%))' }
+        },
       },
       animation: {
-        'fade-in': 'fade-in .5s ease-in-out',
-        'fade-out': 'fade-out .5s ease-in-out',
-        'zoom-in': 'zoom-in .5s ease-in-out',
-        'zoom-out': 'zoom-out .5s ease-in-out',
+        'fade-in': 'fade-in .5s ease-in-out forwards',
+        'fade-out': 'fade-out .5s ease-in-out forwards',
+        'zoom-in': 'zoom-in .5s ease-in-out forwards',
+        'zoom-out': 'zoom-out .5s ease-in-out forwards',
         'bg-flash': 'bg-flash 1s linear 0s infinite alternate',
         'horizontal-scroll': 'horizontal-scroll 14s linear 0s infinite',
-        'horizontal-scroll-reverse': 'horizontal-scroll 14s linear 0s infinite reverse'
+        'horizontal-scroll-reverse': 'horizontal-scroll 14s linear 0s infinite reverse',
+        'vertical-scroll': 'vertical-scroll 20s linear 0s infinite',
       },
       textShadow: {
         '2': '-2px 2px 0 var(--tw-shadow-color)',

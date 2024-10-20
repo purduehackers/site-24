@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
 
 const Community = () => {
     // Stacks for cycling between displayed and hidden messages
-    const [displayedMsgs, setDisplayedMsgs] = useState(discordMessages.slice(0, 3));
-    const [hiddenMsgs, setHiddenMsgs] = useState(discordMessages.slice(3));
+    const [displayedMsgs, setDisplayedMsgs] = useState(discordMessages.slice(0, 4));
+    const [hiddenMsgs, setHiddenMsgs] = useState(discordMessages.slice(4));
 
     useEffect(() => {
         // Autoscroll discord messages every 5 seconds
@@ -24,7 +24,7 @@ const Community = () => {
 
             setDisplayedMsgs(newDisplayed);
             setHiddenMsgs(newHidden);
-        }, 5000)
+        }, 3333)
         
         // Clear interval when component unmounts
         return () => clearInterval(intervalId); 
@@ -37,17 +37,22 @@ const Community = () => {
             </h1>
             <div className="z-20 relative w-full h-screen flex border-solid border-black border-2 bg-amber-100
                     shadow-blocks shadow-cyan-500">
-                <div className="w-1/3 h-full flex flex-col justify-start items-center overflow-y-hidden transition-all border-solid border-black border-2 p-6">
-                    <TransitionGroup>
-                        {displayedMsgs.map((message) => (
-                            <CSSTransition key={message.id} classNames={{
-                                enterActive: 'animate-zoom-in',
-                                exitActive: 'animate-fade-out animate-zoom-out'
-                            }} timeout={500}>
-                                <DiscordCard {...message} />
-                            </CSSTransition>
-                        ))}
-                    </TransitionGroup>
+                <div className="w-1/3 flex flex-col overflow-y-hidden transition-all border-solid border-black border-2 p-6">
+                    {[...Array(2)].map((_, i) => {
+                        return (
+                            <div className="w-full relative top-[-233%] flex flex-col justify-start items-center"
+                                    key={`outer-${i}-1`} 
+                            >
+                                <div className="animate-vertical-scroll">
+                                    {discordMessages.map((message) => (
+                                        <div key={message.id} className={hiddenMsgs.includes(message) ? "animate-zoom-out" : "animate-zoom-in"}>
+                                            <DiscordCard {...message} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
                 <div  className="w-2/3 h-full flex flex-col border-solid border-black border-2">
                     <div  className="w-full h-2/5 flex border-solid border-black border-b-2 p-4">

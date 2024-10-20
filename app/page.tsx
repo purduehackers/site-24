@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { DistortionText, SplitColorChannelText } from 'react-text-fun'
 
 import Head from "next/head";
 import Image from "next/image";
@@ -14,10 +15,31 @@ import Email from "@/components/email";
 import Community from "@/components/community";
 import JoinUs from "@/components/join-us";
 import Footer from "@/components/footer";
-import DiscordCarousel from "@/components/discord-carousel";
 
 export default function Home() {
   const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV;
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/blotterjs-fork@0.1.0/build/blotter.min.js";
+    script.async = true;
+
+    script.onload = () => {
+      console.log("Blotter.js loaded.");
+      setScriptLoaded(true); // Set state to true when loaded
+    };
+
+    script.onerror = (e) => console.error("Failed to load Blotter.js:", e);
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  
+
   return (
     <div>
       <Head>
@@ -35,6 +57,14 @@ export default function Home() {
       </Head>
       <main>
         <Hero />
+        {scriptLoaded && <SplitColorChannelText
+          text="Burst"
+          fontSize={120}
+          rotation={5.0}
+          rgbOffset={0.8}
+          addBlur={false}
+          addNoise={true}
+        />}
         
 
         <div className="bg-indigo-500 relative">
@@ -95,7 +125,7 @@ export default function Home() {
           {
             [...Array(2)].map((_, i) => {
               return (
-                <div key={`outer-${i}-1`} className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll hover:animate-none">
+                <div key={`outer-${i}-1`} className="z-30 font-pixel flex bg-cyan-500 text-amber-300 whitespace-nowrap animate-horizontal-scroll">
                   {
                     [...Array(20)].map((_, j) => {
                       return (
