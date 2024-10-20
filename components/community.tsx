@@ -22,7 +22,7 @@ const Community = () => {
 
             setDisplayedMsgs(newDisplayed);
             setHiddenMsgs(newHidden);
-        }, 20000.0 / 6)
+        }, 3333)
         
         // Clear interval when component unmounts
         return () => clearInterval(intervalId); 
@@ -35,10 +35,14 @@ const Community = () => {
             </h1>
             <div className="z-20 relative w-full h-screen flex border-solid border-black border-2 bg-amber-100
                     shadow-blocks shadow-cyan-500">
-                <div className="w-1/3 flex flex-col overflow-y-hidden transition-all border-solid border-black border-2 p-6">
+                <div className="w-1/3 flex flex-col overflow-y-hidden transition-all border-solid border-black border-2">
+                    <div className="w-full z-30 bg-amber-400 text-white flex gap-2 justify-end px-4 border-solid border-black border-b-2 text-sm text-black font-bold">
+                        <div>feed</div>
+                        <div className="animate">↓</div>
+                    </div>
                     {[...Array(2)].map((_, i) => {
                         return (
-                            <div className="w-full relative top-[-233%] flex flex-col justify-start items-center"
+                            <div className="w-full relative top-[-220%] flex flex-col justify-start items-center"
                                     key={`outer-${i}-1`} 
                             >
                                 <div className="animate-vertical-scroll">
@@ -59,7 +63,7 @@ const Community = () => {
                         </h1>
                     </div>
                     <div  className="w-full h-1/5 flex border-solid border-black border-y-2">
-                        <div  className="bg-amber-400 w-1/5 min-w-[160px] flex justify-center items-center border-solid border-black border-r-4 p-4">
+                        <div  className="bg-teal-400 w-1/5 min-w-[160px] flex justify-center items-center border-solid border-black border-r-4 p-4">
                             <a
                                 href="https://puhack.horse/discord"
                                 target="_blank"
@@ -89,21 +93,25 @@ const Community = () => {
                                 self, and make awesome things together.
                             </p>
                         </div>
-                        <div className="w-5/12 h-full flex justify-center items-center">
-                            <div  className="flex justify-center items-center">
+                        <div className="w-5/12 h-full flex justify-center items-center bg-violet-400">
+                            <div  className="flex flex-col gap-4 justify-center items-center">
                                 <a
                                     href="https://puhack.horse/discord"
                                     target="_blank"
                                 >
-                                    <button className="email-btn text-xl bg-amber-300">Feed some mice</button>
+                                    <button className="email-btn text-xl">Feed some mice</button>
+                                </a>
+                                <a
+                                    href="https://puhack.horse/discord"
+                                    target="_blank"
+                                >
+                                    <button className="email-btn text-xl">Visit the blog?</button>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div className="w-full h-2 bg-amber-500 text-white">
-                        
-                    </div>
+                    <div className="w-full h-2 bg-amber-500 text-white"></div>
                 </div>
             </div>
         </div>
