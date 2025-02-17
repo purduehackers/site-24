@@ -162,5 +162,6 @@ export const madeWith = [
     'avocados number',
     'snake jazz',
     'MAGNETS',
-    'bimetallic strips'
+    'bimetallic strips',
+    'Node.js Device'
 ];
