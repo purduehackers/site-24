@@ -16,6 +16,7 @@ import Community from "@/components/community";
 import JoinUs from "@/components/join-us";
 import Footer from "@/components/footer";
 import Blog from "@/components/blog";
+import Devices from "@/components/new/Devices";
 
 export default function Home() {
   const vercelEnv = process.env.NEXT_PUBLIC_VERCEL_ENV;
@@ -57,6 +58,7 @@ export default function Home() {
       </Head>
       <main>
         <Hero />
+        <Devices />
 
         <div className="bg-indigo-500 relative">
           <div className="z-20 relative flex flex-col justify-center items-end ">
