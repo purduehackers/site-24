@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@icons-pack/react-simple-icons": "^10.0.0",
+    "@react-three/drei": "^9.121.5",
     "@react-three/fiber": "^8.17.14",
     "@types/three": "^0.173.0",
     "font-awesome": "^4.7.0",

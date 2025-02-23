@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, LightBulb } from "@/components/3D";
+import { Model } from "@/components/3D-Devices";
 
 import Head from "next/head";
 import Image from "next/image";
@@ -58,6 +59,40 @@ export default function Home() {
       </Head>
       <main>
         <Hero />
+
+        <div className="w-screen h-screen">
+          <Canvas
+            shadows
+            className="bg-amber-100"
+            camera={{
+              position: [-6, 7, 4],
+            }}
+          >
+
+            <Model position={[0, 0, 0]}/>
+
+            <ambientLight color={"white"} intensity={Math.PI / 2} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+            <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+            {
+              [...Array(5)].map((_, i) => {
+                return (
+                  <Box key={`box-${i}`} position={[-1.2 - i / 2, i, 5 - 2*i]} />
+                );
+              })
+            }
+            <Box position={[-1.2, 0, 0]} />
+            <Box position={[1.2, 0, 0]} />
+
+            <LightBulb position={[0, 3, 0]} />
+            <Box rotation={[Math.PI / 2, 0, 0]} />
+            
+            <mesh>
+              <boxGeometry args={[2, 2, 2]} />
+              <meshPhongMaterial />
+            </mesh> 
+          </Canvas>
+        </div>
 
         <div className="bg-indigo-500 relative">
           <div className="z-20 relative flex flex-col justify-center items-end ">
@@ -189,31 +224,6 @@ export default function Home() {
         </div>
         <Community />
         <Blog />
-
-        <div className="w-screen h-screen">
-          <Canvas
-            shadows
-            className="bg-amber-100"
-            camera={{
-              position: [-6, 7, 7],
-            }}
-          >
-            <ambientLight color={"white"} intensity={Math.PI / 2} />
-            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-            <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-            <Box position={[-1.2, 0, 0]} />
-            <Box position={[1.2, 0, 0]} />
-
-            <LightBulb position={[0, 3, 0]} />
-            <Box rotation={[Math.PI / 2, 0, 0]} />
-            
-            <mesh>
-              <boxGeometry args={[2, 2, 2]} />
-              <meshPhongMaterial />
-            </mesh> 
-            <directionalLight position={[0, 0, 5]} color="red" />
-          </Canvas>
-        </div>
 
         {/* Hack marquis */}
         <div className="flex">

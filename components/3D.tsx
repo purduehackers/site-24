@@ -1,7 +1,9 @@
 import * as THREE from 'three'
 import { SphereGeometry } from 'three'; 
 import React, { useRef, useState } from 'react'
-import { Canvas, extend, useFrame, ThreeElements } from '@react-three/fiber'
+import { Canvas, extend, useFrame, useLoader, ThreeElements } from '@react-three/fiber'
+//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+
 
 extend({ SphereGeometry }); 
 
@@ -29,7 +31,7 @@ export function Box(props: ThreeElements['mesh']) {
         onPointerOver={(event) => setHover(true)}
         onPointerOut={(event) => setHover(false)}>
           <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color={hovered ? 'hotpink' : '#2f74c0'} />
+          <meshStandardMaterial color={hovered ? '#FDD34A' : '#BE83D4'} />
       </mesh>
     );
 }
