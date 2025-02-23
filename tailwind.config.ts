@@ -154,7 +154,6 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('tailwindcss-text-fill-stroke')(),
     plugin(function ({ matchUtilities, theme }: { 
       matchUtilities : PluginAPI["matchUtilities"], 
       theme : PluginAPI["theme"]
